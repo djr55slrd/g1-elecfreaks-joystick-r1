@@ -1,3 +1,6 @@
+control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_AB, EventBusValue.MICROBIT_BUTTON_EVT_DOWN, function () {
+    Switch = 1
+})
 control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_A, EventBusValue.MICROBIT_BUTTON_EVT_DOWN, function () {
     if (Switch) {
         Radio += -1
@@ -12,6 +15,8 @@ control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_B, EventBusValue.MICROBIT_BUTT
         if (Radio > RadioMax) {
             Radio = 1
         }
+        Switch = 1
+        basic.showNumber(Radio)
     }
 })
 let Y = 0
