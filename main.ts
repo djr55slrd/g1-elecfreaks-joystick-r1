@@ -73,7 +73,7 @@ joystickbit.initJoystickBit()
 RadioGroup = 2
 RadioMax = 6
 RadioSwtch = 1
-RadioDly = 10
+RadioDly = 15
 RadioDisplay = RadioDly
 radio.setGroup(RadioGroup)
 basic.showNumber(RadioGroup)
