@@ -57,6 +57,11 @@ RadioDly = 15
 RadioDisplay = RadioDly
 radio.setGroup(RadioGroup)
 basic.showNumber(RadioGroup)
+pins.setPull(DigitalPin.P8, PinPullMode.PullUp)
+pins.setPull(DigitalPin.P13, PinPullMode.PullUp)
+pins.setPull(DigitalPin.P14, PinPullMode.PullUp)
+pins.setPull(DigitalPin.P15, PinPullMode.PullUp)
+pins.setPull(DigitalPin.P16, PinPullMode.PullUp)
 basic.forever(function () {
     X = pins.analogReadPin(AnalogPin.P1)
     if (X > 448 && X < 576) {
