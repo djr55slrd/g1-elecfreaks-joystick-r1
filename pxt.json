@@ -1,10 +1,11 @@
 {
-    "name": "G0 Default",
+    "name": "G4 4Tronix BitCommander R4",
     "description": "",
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "bitcommander": "github:4tronix/bitcommander#v1.1.6"
     },
     "files": [
         "main.blocks",
