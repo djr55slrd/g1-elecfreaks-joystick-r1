@@ -1,5 +1,5 @@
 {
-    "name": "G3 Kitronik Controller R3",
+    "name": "G0 Default",
     "description": "",
     "dependencies": {
         "core": "*",
