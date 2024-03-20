@@ -70,7 +70,7 @@ let RadioSwtch = 0
 let RadioMax = 0
 let RadioGroup = 0
 joystickbit.initJoystickBit()
-RadioGroup = 1
+RadioGroup = 2
 RadioMax = 6
 RadioSwtch = 1
 RadioDly = 10
