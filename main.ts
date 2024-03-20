@@ -40,20 +40,46 @@ let YWas = 0
 let Y = 0
 let XWas = 0
 let X = 0
+let P16 = 0
+let P15 = 0
+let P14 = 0
+let P13 = 0
+let P8 = 0
 let RadioDisplay = 0
 let RadioDly = 0
 let RadioSwtch = 0
 let RadioMax = 0
 let RadioGroup = 0
-RadioGroup = 2
+RadioGroup = 5
 RadioMax = 6
 RadioSwtch = 1
-RadioDly = 10
+RadioDly = 15
 RadioDisplay = RadioDly
 radio.setGroup(RadioGroup)
 basic.showNumber(RadioGroup)
+pins.setPull(DigitalPin.P8, PinPullMode.PullUp)
+pins.setPull(DigitalPin.P13, PinPullMode.PullUp)
+pins.setPull(DigitalPin.P14, PinPullMode.PullUp)
+pins.setPull(DigitalPin.P15, PinPullMode.PullUp)
+pins.setPull(DigitalPin.P16, PinPullMode.PullUp)
 basic.forever(function () {
-    X = 0
+    if (P8 != pins.digitalReadPin(DigitalPin.P0)) {
+        P8 = pins.digitalReadPin(DigitalPin.P0)
+        radio.sendValue("Z", P8)
+    } else if (P13 != pins.digitalReadPin(DigitalPin.P13)) {
+        P13 = pins.digitalReadPin(DigitalPin.P13)
+        radio.sendValue("S", P13)
+    } else if (P14 != pins.digitalReadPin(DigitalPin.P14)) {
+        P14 = pins.digitalReadPin(DigitalPin.P14)
+        radio.sendValue("E", P14)
+    } else if (P15 != pins.digitalReadPin(DigitalPin.P15)) {
+        P15 = pins.digitalReadPin(DigitalPin.P15)
+        radio.sendValue("N", P15)
+    } else if (P16 != pins.digitalReadPin(DigitalPin.P16)) {
+        P16 = pins.digitalReadPin(DigitalPin.P16)
+        radio.sendValue("W", P16)
+    }
+    X = pins.analogReadPin(AnalogPin.P1)
     if (X > 448 && X < 576) {
         X = 512
     }
@@ -61,7 +87,7 @@ basic.forever(function () {
         radio.sendValue("X", X)
         XWas = X
     }
-    Y = 0
+    Y = pins.analogReadPin(AnalogPin.P2)
     if (Y > 448 && Y < 576) {
         Y = 512
     }
