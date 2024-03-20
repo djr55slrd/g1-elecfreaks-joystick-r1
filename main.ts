@@ -1,3 +1,6 @@
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Fire1, Kitronik_Game_Controller.ControllerButtonEvents.Down, function () {
+    radio.sendValue("A", 0)
+})
 control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_A, EventBusValue.MICROBIT_BUTTON_EVT_UP, function () {
     radio.sendValue("A", 1)
 })
@@ -8,6 +11,24 @@ control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_AB, EventBusValue.MICROBIT_BUT
     RadioSwtch = 1
     RadioDisplay = RadioDly
     basic.showNumber(RadioGroup)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Fire2, Kitronik_Game_Controller.ControllerButtonEvents.Down, function () {
+    radio.sendValue("B", 0)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Right, Kitronik_Game_Controller.ControllerButtonEvents.Up, function () {
+    radio.sendValue("E", 1)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Down, Kitronik_Game_Controller.ControllerButtonEvents.Up, function () {
+    radio.sendValue("S", 1)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Down, Kitronik_Game_Controller.ControllerButtonEvents.Down, function () {
+    radio.sendValue("S", 0)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Left, Kitronik_Game_Controller.ControllerButtonEvents.Up, function () {
+    radio.sendValue("W", 1)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Up, Kitronik_Game_Controller.ControllerButtonEvents.Down, function () {
+    radio.sendValue("N", 0)
 })
 control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_A, EventBusValue.MICROBIT_BUTTON_EVT_DOWN, function () {
     if (RadioSwtch != 0) {
@@ -20,6 +41,9 @@ control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_A, EventBusValue.MICROBIT_BUTT
     } else {
         radio.sendValue("A", 0)
     }
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Fire2, Kitronik_Game_Controller.ControllerButtonEvents.Up, function () {
+    radio.sendValue("B", 1)
 })
 control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_B, EventBusValue.MICROBIT_BUTTON_EVT_UP, function () {
     radio.sendValue("B", 1)
@@ -36,6 +60,18 @@ control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_B, EventBusValue.MICROBIT_BUTT
         radio.sendValue("B", 0)
     }
 })
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Up, Kitronik_Game_Controller.ControllerButtonEvents.Up, function () {
+    radio.sendValue("N", 1)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Fire1, Kitronik_Game_Controller.ControllerButtonEvents.Up, function () {
+    radio.sendValue("A", 1)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Right, Kitronik_Game_Controller.ControllerButtonEvents.Down, function () {
+    radio.sendValue("E", 0)
+})
+Kitronik_Game_Controller.onButtonPress(Kitronik_Game_Controller.ControllerButtonPins.Left, Kitronik_Game_Controller.ControllerButtonEvents.Down, function () {
+    radio.sendValue("W", 0)
+})
 let YWas = 0
 let Y = 0
 let XWas = 0
@@ -45,7 +81,7 @@ let RadioDly = 0
 let RadioSwtch = 0
 let RadioMax = 0
 let RadioGroup = 0
-RadioGroup = 2
+RadioGroup = 3
 RadioMax = 6
 RadioSwtch = 1
 RadioDly = 10

@@ -1,10 +1,11 @@
 {
-    "name": "G0 Default",
+    "name": "G3 Kitronik Controller R3",
     "description": "",
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "pxt-kitronik-game-controller": "github:kitronikltd/pxt-kitronik-game-controller#V0.0.4"
     },
     "files": [
         "main.blocks",
