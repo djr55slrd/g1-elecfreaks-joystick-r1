@@ -1,6 +1,3 @@
-joystickbit.onButtonEvent(joystickbit.JoystickBitPin.P12, joystickbit.ButtonType.up, function () {
-    radio.sendValue("W", 1)
-})
 control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_A, EventBusValue.MICROBIT_BUTTON_EVT_UP, function () {
     radio.sendValue("A", 1)
 })
@@ -11,15 +8,6 @@ control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_AB, EventBusValue.MICROBIT_BUT
     RadioSwtch = 1
     RadioDisplay = RadioDly
     basic.showNumber(RadioGroup)
-})
-joystickbit.onButtonEvent(joystickbit.JoystickBitPin.P14, joystickbit.ButtonType.down, function () {
-    radio.sendValue("S", 0)
-})
-joystickbit.onButtonEvent(joystickbit.JoystickBitPin.P13, joystickbit.ButtonType.up, function () {
-    radio.sendValue("N", 1)
-})
-joystickbit.onButtonEvent(joystickbit.JoystickBitPin.P15, joystickbit.ButtonType.down, function () {
-    radio.sendValue("E", 0)
 })
 control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_A, EventBusValue.MICROBIT_BUTTON_EVT_DOWN, function () {
     if (RadioSwtch != 0) {
@@ -48,18 +36,6 @@ control.onEvent(EventBusSource.MICROBIT_ID_BUTTON_B, EventBusValue.MICROBIT_BUTT
         radio.sendValue("B", 0)
     }
 })
-joystickbit.onButtonEvent(joystickbit.JoystickBitPin.P15, joystickbit.ButtonType.up, function () {
-    radio.sendValue("E", 1)
-})
-joystickbit.onButtonEvent(joystickbit.JoystickBitPin.P14, joystickbit.ButtonType.up, function () {
-    radio.sendValue("S", 1)
-})
-joystickbit.onButtonEvent(joystickbit.JoystickBitPin.P13, joystickbit.ButtonType.down, function () {
-    radio.sendValue("N", 0)
-})
-joystickbit.onButtonEvent(joystickbit.JoystickBitPin.P12, joystickbit.ButtonType.down, function () {
-    radio.sendValue("W", 0)
-})
 let YWas = 0
 let Y = 0
 let XWas = 0
@@ -69,7 +45,6 @@ let RadioDly = 0
 let RadioSwtch = 0
 let RadioMax = 0
 let RadioGroup = 0
-joystickbit.initJoystickBit()
 RadioGroup = 2
 RadioMax = 6
 RadioSwtch = 1
@@ -78,7 +53,7 @@ RadioDisplay = RadioDly
 radio.setGroup(RadioGroup)
 basic.showNumber(RadioGroup)
 basic.forever(function () {
-    X = 1023 - joystickbit.getRockerValue(joystickbit.rockerType.X)
+    X = 0
     if (X > 448 && X < 576) {
         X = 512
     }
@@ -86,7 +61,7 @@ basic.forever(function () {
         radio.sendValue("X", X)
         XWas = X
     }
-    Y = joystickbit.getRockerValue(joystickbit.rockerType.Y)
+    Y = 0
     if (Y > 448 && Y < 576) {
         Y = 512
     }

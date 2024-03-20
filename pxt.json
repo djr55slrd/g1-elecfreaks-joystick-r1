@@ -1,11 +1,10 @@
 {
-    "name": "G2 Elecfreaks Joystick R2",
+    "name": "G3 Kitronik Controller R3",
     "description": "",
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*",
-        "joystickbit": "github:tinkertanker/pxt-joystickbit#v1.0.2"
+        "microphone": "*"
     },
     "files": [
         "main.blocks",
